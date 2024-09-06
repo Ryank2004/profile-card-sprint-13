@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+  }
+  
+  
+  :root {
+  
+    --textColor: black;
+    --primaryFont: 'Hahmlet', serif;
+  
+  }
+  
+  ul li {
+    list-style: none;
+    margin-top: 40px;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: open sans;
+    overflow:hidden;
+    background:#F2EFE6;
+  
+  }
