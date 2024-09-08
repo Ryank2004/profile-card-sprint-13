@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     export let data
   console.log(data)
     function checkAvatarImage (avatar) {
@@ -139,4 +139,107 @@
         transform: rotateY(180deg);
         }
 
-  </style>
+  </style> -->
+ <script>
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    const cardsSplit = document.querySelector('.card-container');
+
+    if (cardsSplit) {
+      cardsSplit.addEventListener('click', () => {
+        cardsSplit.classList.toggle('transition');
+      });
+    }
+  });
+</script>
+
+<main>
+  <ul class="card-container">
+    <li class="card card-1">
+      <div class="content">
+        <h2>Kaart 1</h2>
+      </div>
+    </li>
+    <li class="card card-2">
+      <div class="content">
+        <h2>Kaart 2</h2>
+      </div>
+    </li>
+    <li class="card card-3">
+      <div class="content">
+        <h2>Kaart 3</h2>
+      </div>
+    </li>
+    <li class="card card-4">
+      <div class="content">
+        <h2>Kaart 4</h2>
+      </div>
+    </li>
+    <li class="card card-5">
+      <div class="content">
+        <h2>Kaart 5</h2>
+      </div>
+    </li>
+  </ul>
+</main>
+
+<style>
+  .card-container {
+    width: 900px;
+    height: 480px;
+    list-style-type: none;
+    position: relative;
+    margin: 0 auto 20px;
+    padding: 20px;
+    cursor: pointer;
+    scale: 2;
+  }
+
+  .card {
+    background: #FFF;
+    overflow: hidden;
+    height: 360px;
+    width: 280px;
+    border-radius: 10px;
+    position: absolute;
+    left: 300px;
+    box-shadow: 1px 2px 2px 0 #aaa;
+    transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
+  }
+
+  .content {
+    padding: .5em;
+  }
+
+  .card-1 {
+    z-index: 10;
+    transform: rotateZ(-2deg);
+  }
+
+  .card-2 {
+    z-index: 9;
+    transform: rotateZ(-7deg);
+  }
+
+  .card-3 {
+    z-index: 8;
+    transform: rotateZ(5deg);
+  }
+
+  :global(.card-container.transition .card) {
+      transform: rotateZ(0deg);
+  }
+
+  :global(.card-container.transition .card-1) {
+      left: 0px;
+  }
+
+  :global(.card-container.transition .card-2) {
+      left: 600px;
+  }
+
+  :global(.card-container.transition .card-3) {
+      left: 300px;
+  }
+</style>
