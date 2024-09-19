@@ -71,7 +71,7 @@
           <h3 class='card-icon top-left'>10♠️</h3> <h3 class='card-icon top-right'>10♠️</h3>
           <div class="card-content">
             <!-- <img src="{data.avatar}"> -->
-            <h2>{data.name} {data.surname}</h2>
+            <h1>{data.name}<br>{data.surname}</h1>
           </div>
           <h3 class='card-icon bottom-left'>10♠️</h3> <h3 class='card-icon bottom-right'>10♠️</h3>
         </div>
@@ -99,7 +99,7 @@
         </div>
         <div class="card-back">
           <h3 class='card-icon top-left'>J♣️</h3> <h3 class='card-icon top-right'>J♣️</h3>
-            <h2>Tekst 3</h2>
+            <img src={data.avatar} class="photo" alt="profielfoto">
           <h3 class='card-icon bottom-left'>J♣️</h3> <h3 class='card-icon bottom-right'>J♣️</h3>
         </div>
       </div>
@@ -160,25 +160,41 @@
   background: #F8F8F8;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+}
+
+.card-content h1 {
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
 }
 
 .card-content h2 {
+  margin-top: 1em;
   font-size: 18px;
+  margin-bottom: .2em;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
 
 .card-content pre {
+  max-width: 120px;
   text-align: center;
-  font-size: 9px;
-  line-height: 20px;
-  margin: 0 10px 10px;
+  font-size: 10px;
+  line-height: 16px;
+  margin: 0 10px 0px;
+  white-space: normal;
 }
 
 .card-icon {
@@ -263,6 +279,7 @@
   .card-container {
     width: 1000px;
     height: 480px;
+    scale: .8;
   }
 
   .card {
@@ -273,17 +290,28 @@
     transition: transform 0.4s ease-in-out, left 0.4s ease-in-out;
   }
 
+  .card-content h1 {
+    font-size: 30px;
+  }
+
   .card-content h2 {
     font-size: 28px;
-    margin-bottom: 12px;
+    margin-top: 1.4em;
+    margin-bottom: .4em;
+  }
+
+  .photo {
+    width: 200px;
+    height: 200px;
   }
 
   .card-content pre {
-  font-size: 18px;
-  line-height: 36px;
-  margin: 0; /* Verwijder marges die tekst van de kaart zouden kunnen duwen */
-  white-space: pre-wrap; /* Breek lange regels af in het pre-element */
-  word-wrap: break-word; /* Breek woorden af als ze te lang zijn */
+    max-width: 270px;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0; /* Verwijder marges die tekst van de kaart zouden kunnen duwen */
+    white-space: pre-wrap; /* Breek lange regels af in het pre-element */
+    word-wrap: break-word; /* Breek woorden af als ze te lang zijn */
   }
 
   .card-icon {
@@ -328,5 +356,12 @@
     top: 0;
     transform: rotateZ(0deg);
   }
+}
+
+@media screen and (min-width: 1300px) {
+
+.card-container {
+  scale: 1.2;
+}
 }
 </style>
